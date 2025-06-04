@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess my number</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="buttons">
+        <button class="btn" id="play-again">Play Again</button>
+        <button class="btn" id="instructions">Instructions</button>
+        <button class="btn" id="tutorial">Tutorial</button>
+      </div>
+      <p id="title">Guess my 5-digit number!</p>
+      <p id="explanation">
+        Press the "Instructions" button for information on how to play the game
+        and on the "Tutorial" button for a strategy that will maximize your
+        winning chances
+      </p>
+    </header>
+    <main>
+      <div id="modal" class="hidden">
+        <button id="close-modal">&times;</button>
+        <h3 id="messageTitle">How to play this game</h3>
+        <p id="message">
+          "You need to guess a five digit number that the computer selects
+          randomly. The digits in the number don't repeat themselves and the
+          first digit can not be 0. With you every guess you will receive two
+          clues: the first clue (specified with the symbol 🎯🎯🎯) is how many
+          digits from your guess are in the exact position in the number that
+          the computer selected; the second clue (specified with the symbol
+          🤏🤏🤏) is how many digits from your guess are in the number that the
+          computer selected but on a different position in the number. You only
+          have 10 turns in order to win. Have fun!
+        </p>
+      </div>
+      <div class="hidden" id="overlay"></div>
+      <div class="upper">
+        <input
+          placeholder="Type your guess here"
+          style="background-color: #ecd6d3"
+          type="number"
+          id="number-input"
+        />
+        <button class="btn" id="btn-check">Check the number</button>
+      </div>
+      <div id="main-work">
+        <div id="left" class="col-6">
+          <div class="lower">
+            <table id="myTable">
+              <thead>
+                <tr>
+                  <th>Guessed Number</th>
+                  <th>🎯🎯🎯</th>
+                  <th>🤏🤏🤏</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <!-- Rows will be added here by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="right">
+          <table id="table-digits">
+            <thead>
+              <tr>
+                <th>Digits group</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="table-digits-body">
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <table id="table-clues">
+            <thead>
+              <tr>
+                <th>Clues</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="table-clues-body">
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p id="scores">
+        Games played: <span id="games-played"></span>; Number of turns this
+        game: <span id="current-turns">10</span>; Average number of turns:
+        <span id="average"></span>
+      </p>
+      <!-- <p id="scores">Your current game: Number of turns - <span id="turns">10</span>; Time to win - <span id="min-sec">2:00</span></p>
+        <p id="-average-scores">Average of your best 10 games: Number of turns - <span id="average-turns">10</span>; Time to win - <span id="average-min-sec">2:00</span></p> -->
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
