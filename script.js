@@ -237,7 +237,7 @@ function calculateAverageTurns(turn) {
 }
 
 function resetAll() {
-  explanation = '';
+  explanation = 'Press the "Instructions" button for information on how to play the game and on the "Tutorial" button for a strategy that will maximize your winning chances';
   youWon = false;
   enterKeyEnabled = true;
   guessedNumber.disabled = false;
