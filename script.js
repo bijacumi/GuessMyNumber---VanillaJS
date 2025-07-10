@@ -237,6 +237,7 @@ function calculateAverageTurns(turn) {
 }
 
 function resetAll() {
+  explanation = '';
   youWon = false;
   enterKeyEnabled = true;
   guessedNumber.disabled = false;
